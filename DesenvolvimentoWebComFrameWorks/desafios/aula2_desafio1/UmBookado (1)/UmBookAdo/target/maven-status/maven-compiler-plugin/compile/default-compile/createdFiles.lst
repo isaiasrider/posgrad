@@ -1,0 +1,3 @@
+br/com/isaias/controller/ServletController.class
+br/com/isaias/model/BookEntity.class
+br/com/isaias/util/JpaUtil.class
