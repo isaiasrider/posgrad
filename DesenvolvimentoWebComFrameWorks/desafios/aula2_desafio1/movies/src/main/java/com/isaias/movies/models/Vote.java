@@ -1,14 +1,11 @@
 package com.isaias.movies.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+
+@Table(uniqueConstraints={@UniqueConstraint(columnNames = {"cpf" , "movie_id"})})
 
 @Entity
 public class Vote {
-
-
 
     @Id
     @GeneratedValue
@@ -16,9 +13,21 @@ public class Vote {
     String nomePessoa;
     String comentario;
     int nota;
+    String cpf;
 
     @ManyToOne
     Movie movie;
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+
+
 
     public long getId() {
         return id;
