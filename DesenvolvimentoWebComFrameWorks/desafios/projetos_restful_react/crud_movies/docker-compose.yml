@@ -1,0 +1,19 @@
+version: "3"
+services:
+        db_host:
+                container_name: postgres-database-host
+                image: postgres
+                ports:
+                        - "5432:5432"
+                environment: 
+                        - "POSTGRES_PASSWORD=postgres"
+                        - "POSTGRES_USER=postgres"
+                        - "ALLOW_IP_RANGE='0.0.0.0/0'"
+                volumes:
+                        - "$PWD/postgres_db_data:/var/lib/postgresql/data"
+                networks: 
+                        - net
+
+
+networks:
+        net:
